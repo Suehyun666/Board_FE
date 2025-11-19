@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/60a63892-2112-4062-a08e-082856248f6a
 1. 리포지토리를 클론합니다.
    ```bash
    git clone [https://github.com/Suehyun666/Board_FE.git](https://github.com/Suehyun666/Board_FE.git)
-````
+   ```
 
 2.  프로젝트 폴더로 이동합니다.
     ```bash
