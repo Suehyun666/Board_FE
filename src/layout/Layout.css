@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 화면 꽉 차게 */
+  background-color: var(--bg-main);
+}
+
+.main-content {
+  flex: 1; /* 헤더, 푸터 제외 나머지 공간 차지 */
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px; /* 상하 여백 넉넉하게 */
+  
+  /* 페이지 전환 시 부드러운 등장 효과 (선택사항) */
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 16px;
+  }
+}

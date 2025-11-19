@@ -1,0 +1,114 @@
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  transition: box-shadow 0.3s;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-sub);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 메뉴 호버 시 색상 변경 */
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* 일반 링크 밑줄 효과 */
+a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+a.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 로그아웃 버튼 스타일 (링크처럼 보이게) */
+.logout-btn {
+  color: #ef4444; /* 빨간색 계열 */
+}
+
+.logout-btn:hover {
+  color: #dc2626;
+}
+
+/* 회원가입 강조 스타일 (버튼처럼) */
+.nav-link.highlight {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.nav-link.highlight:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+.nav-link.highlight::after {
+  display: none; /* 밑줄 효과 제거 */
+}
+
+/* 모바일 메뉴 대응 */
+@media (max-width: 640px) {
+  .nav {
+    gap: 15px;
+  }
+  .nav-link {
+    font-size: 0.85rem;
+  }
+  .nav-link.highlight {
+    padding: 6px 12px;
+  }
+}
