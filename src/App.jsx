@@ -1,21 +1,28 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from './components/layout/Layout'
-import Home from './pages/Home'
-import BoardList from './pages/BoardList'
+import MainLayout from './layout/MainLayout'
+import Home from './pages/home/Home'
+import BoardList from './pages/list/BoardList'
+import BoardDetail from './pages/detail/BoardDetail' 
+import BoardWrite from './pages/write/BoardWrite'
+import LoginPage from './pages/login/LoginPage' 
+import RegisterPage from './pages/register/RegisterPage'
+import MyPage from './pages/user/Mypage'
 import './App.css'
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
+      <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} /> 
+          <Route path="/register" element={<RegisterPage />} /> 
           <Route path="/boards" element={<BoardList />} />
-          {/* 나중에 추가할 라우트들 */}
-          {/* <Route path="/boards/:id" element={<BoardDetail />} /> */}
-          {/* <Route path="/write" element={<BoardWrite />} /> */}
+          <Route path="/boards/:id" element={<BoardDetail />} /> 
+          <Route path="/write" element={<BoardWrite />} />
+          <Route path="/mypage" element={<MyPage />} />
         </Routes>
-      </Layout>
+      </MainLayout>
     </BrowserRouter>
   )
 }

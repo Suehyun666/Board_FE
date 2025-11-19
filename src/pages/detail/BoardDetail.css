@@ -1,0 +1,347 @@
+/* 상세 페이지 컨테이너 */
+.board-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--bg-white, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* 헤더 */
+.detail-header {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+
+.detail-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main, #1f2937);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-sub, #6b7280);
+}
+
+.detail-author {
+  font-weight: 600;
+  color: var(--text-main, #374151);
+  position: relative;
+  padding-right: 12px;
+}
+
+.detail-author::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  background-color: #d1d5db;
+}
+
+/* 본문 및 이미지 */
+.detail-content {
+  min-height: 300px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-main, #374151);
+  white-space: pre-wrap;
+  margin-bottom: 40px;
+}
+
+.post-images {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 이미지 중앙 정렬 */
+}
+
+.content-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 첨부파일 목록 */
+.file-list {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.file-list h4 {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-list li {
+  margin-bottom: 8px;
+}
+
+.file-list a {
+  color: var(--text-main, #333);
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.file-list a:hover {
+  border-color: var(--primary-color, #3b82f6);
+  color: var(--primary-color, #3b82f6);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 버튼 액션바 */
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  margin-top: 40px;
+}
+
+.action-right {
+  display: flex;
+  gap: 12px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-sub, #6b7280);
+  font-size: 1.1rem;
+}
+
+/* 댓글 섹션 */
+.comments-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid var(--border-color, #e5e7eb);
+}
+
+.comments-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main, #1f2937);
+  margin-bottom: 24px;
+}
+
+/* 댓글 작성 폼 */
+.comment-form {
+  margin-bottom: 32px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.comment-form-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-login-notice {
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-sub, #6b7280);
+  margin-bottom: 32px;
+}
+
+.comment-login-notice a {
+  color: var(--primary-color, #3b82f6);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.comment-login-notice a:hover {
+  text-decoration: underline;
+}
+
+/* 댓글 목록 */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.no-comments {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-sub, #9ca3af);
+  font-size: 0.95rem;
+}
+
+.comment-item {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s;
+}
+
+.comment-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: var(--text-main, #374151);
+  font-size: 0.95rem;
+}
+
+.comment-date {
+  font-size: 0.85rem;
+  color: var(--text-sub, #9ca3af);
+}
+
+.comment-content {
+  margin: 0 0 12px 0;
+  color: var(--text-main, #374151);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.comment-action-btn {
+  background: none;
+  border: none;
+  color: var(--text-sub, #6b7280);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.comment-action-btn:hover {
+  background-color: #e5e7eb;
+  color: var(--text-main, #374151);
+}
+
+.comment-action-btn.delete:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* 댓글 수정 폼 */
+.comment-edit-form {
+  margin-top: 8px;
+}
+
+.comment-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 640px) {
+  .board-detail {
+    padding: 24px;
+    margin: 10px;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-actions {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .detail-actions button {
+    width: 100%;
+  }
+
+  .action-right {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .comments-section {
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+
+  .comments-title {
+    font-size: 1.25rem;
+  }
+
+  .comment-item {
+    padding: 16px;
+  }
+
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

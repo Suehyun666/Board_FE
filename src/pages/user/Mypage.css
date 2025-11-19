@@ -1,0 +1,48 @@
+.mypage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* 화면 중간 쯤에 위치하도록 */
+}
+
+.mypage-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.mypage-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.user-info-summary {
+  margin-bottom: 30px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* 버튼 사이 간격 */
+}
+
+/* 기존 Button 컴포넌트에 추가 클래스를 줄 경우를 대비한 스타일 */
+.action-buttons button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.action-buttons button:hover {
+  opacity: 0.9;
+}
