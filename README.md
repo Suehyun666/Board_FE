@@ -6,7 +6,7 @@
 
 > `docs` 디렉토리에 있는 시연 영상입니다.
 
-[▶️ 시연 영상 보러가기](./docs/작동영상.mp4)
+[▶️ 시연 영상 보러가기]
 https://github.com/user-attachments/assets/60a63892-2112-4062-a08e-082856248f6a
 
 
@@ -24,14 +24,14 @@ https://github.com/user-attachments/assets/60a63892-2112-4062-a08e-082856248f6a
 
 1. 리포지토리를 클론합니다.
    ```bash
-   git clone [https://github.com/Suehyun666/Board_FE.git](https://github.com/Suehyun666/Board_FE.git)
+   git clone https://github.com/Suehyun666/Board_FE.git
    ```
 
 2.  프로젝트 폴더로 이동합니다.
     ```bash
     cd Board_FE
     ```
-3.  의존성 패키지를 설치합니다.
+3.  의존성 패키지를 설치합니다.(nodejs가 설치되어 있어야 합니다!)
     ```bash
     npm install
     ```
@@ -48,8 +48,7 @@ https://github.com/user-attachments/assets/60a63892-2112-4062-a08e-082856248f6a
 
 ```bash
 # .env 예시
-REACT_APP_API_URL=http://localhost:8080
-REACT_APP_API_KEY=your_api_key_here
+VITE_API_BASE_URL=https://백엔드 url
 # (필요한 환경변수들을 여기에 추가하세요)
 ```
 
@@ -59,6 +58,10 @@ REACT_APP_API_KEY=your_api_key_here
 
 ```bash
 npm start
+# 혹은
+npm run dev
+# 빌드 시
+npm run build 
 ```
 
 ````
