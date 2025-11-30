@@ -17,14 +17,11 @@ spec:
     spec:
       containers:
         - name: board-frontend
-          image: suehunpark/board-fe:61000b5ä tøÀ Üø\ À½X8”
+          image: suehunpark/board-fe:61000b5
           imagePullPolicy: Always
           ports:
             - containerPort: 80
               name: http
-
-          # X½ À” LÜ À„Ð ü…À\, ðÀ„Ð” D” ÆL
-          # Vite” LÜ Ü VITE_ P¬ X½À| ˆäÐ ìhÜ´
 
           resources:
             requests:
