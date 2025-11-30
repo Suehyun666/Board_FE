@@ -62,7 +62,10 @@ function BoardDetail() {
     }
 
     try {
-      await commentApi.createComment(id, { content: commentContent })
+      await commentApi.createComment(id, {
+        content: commentContent,
+        userId: parseInt(currentUserId)
+      })
       setCommentContent('')
       // 댓글 목록 새로고침
       await fetchPost()
@@ -84,7 +87,10 @@ function BoardDetail() {
     }
 
     try {
-      await commentApi.updateComment(id, commentId, { content: editingContent })
+      await commentApi.updateComment(id, commentId, {
+        content: editingContent,
+        userId: parseInt(currentUserId)
+      })
       setEditingCommentId(null)
       setEditingContent('')
       await fetchPost()
