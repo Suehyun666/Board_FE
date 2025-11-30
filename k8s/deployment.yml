@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-frontend
+  namespace: board-app
+  labels:
+    app: board-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: board-frontend
+  template:
+    metadata:
+      labels:
+        app: board-frontend
+    spec:
+      containers:
+        - name: board-frontend
+          image: suehunpark/board-fe:latest  # ä tøÀ Üø\ À½X8”
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: http
+
+          # X½ À” LÜ À„Ð ü…À\, ðÀ„Ð” D” ÆL
+          # Vite” LÜ Ü VITE_ P¬ X½À| ˆäÐ ìhÜ´
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
