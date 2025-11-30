@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: board-frontend
-          image: suehunpark/board-fe:latest  # ä tøÀ Üø\ À½X8”
+          image: suehunpark/board-fe:61000b5ä tøÀ Üø\ À½X8”
           imagePullPolicy: Always
           ports:
             - containerPort: 80
