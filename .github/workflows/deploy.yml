@@ -38,8 +38,7 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/board-fe:latest
           build-args: |
             VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/board-fe:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/board-fe:buildcache,mode=max
+          no-cache: true
 
       - name: Update deployment manifest
         run: |
