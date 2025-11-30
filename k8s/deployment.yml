@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: board-frontend
-          image: suehunpark/board-fe:9f3f79f
+          image: suehunpark/board-fe:1217712
           imagePullPolicy: Always
           ports:
             - containerPort: 80
