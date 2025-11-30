@@ -17,31 +17,34 @@ export const commentApi = {
   /**
    * 댓글 작성
    * @param {number} postId - 게시글 ID
-   * @param {Object} commentData - 댓글 데이터 { content }
+   * @param {Object} commentData - 댓글 데이터 { content, userId }
    * @returns {Promise} 생성된 댓글 ID
    */
   createComment: (postId, commentData) => {
-    return api.post(`/boards/${postId}/comments`, commentData)
+    const { userId, ...bodyData } = commentData
+    return api.post(`/boards/${postId}/comments?userId=${userId}`, bodyData)
   },
 
   /**
    * 댓글 수정
    * @param {number} postId - 게시글 ID
    * @param {number} commentId - 댓글 ID
-   * @param {Object} commentData - 수정할 데이터 { content }
+   * @param {Object} commentData - 수정할 데이터 { content, userId }
    * @returns {Promise}
    */
   updateComment: (postId, commentId, commentData) => {
-    return api.put(`/boards/${postId}/comments/${commentId}`, commentData)
+    const { userId, ...bodyData } = commentData
+    return api.put(`/boards/${postId}/comments/${commentId}?userId=${userId}`, bodyData)
   },
 
   /**
    * 댓글 삭제
    * @param {number} postId - 게시글 ID
    * @param {number} commentId - 댓글 ID
+   * @param {number} userId - 사용자 ID
    * @returns {Promise}
    */
-  deleteComment: (postId, commentId) => {
-    return api.delete(`/boards/${postId}/comments/${commentId}`)
+  deleteComment: (postId, commentId, userId) => {
+    return api.delete(`/boards/${postId}/comments/${commentId}?userId=${userId}`)
   }
 }
