@@ -109,7 +109,7 @@ function BoardDetail() {
     if (!window.confirm('댓글을 삭제하시겠습니까?')) return
 
     try {
-      await commentApi.deleteComment(id, commentId)
+      await commentApi.deleteComment(id, commentId, parseInt(currentUserId))
       await fetchPost()
     } catch (err) {
       console.error('댓글 삭제 실패:', err)
